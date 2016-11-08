@@ -18,15 +18,12 @@ console.log('Ready');
 			
 		},
 		showInfos : function(response){
-			for(var i = 0; i < response.customers.length; i++ ){
-				var infosUsers = response.customers[i];
-				console.log(infosUsers);
-				$('ul').append('<li>' + infosUsers.first_name + infosUsers.last_name + '</li>')
-			}
-			var data = {infos : infosUsers };
-			var template = '{{#infos}}<li>{{infos}}</li>{{/infos}}';
-			var output = Mustache.render(template, data);
-			$('ul').append(output);		
+			var template = "<ul>{{#customers}}<li>{{first_name}} {{last_name}} {{company}} {{role}} {{phone}} {{email}} {{description}}</li>{{/customers}}</ul>";
+			console.log(template);
+			var rendered = Mustache.render(template, response);
+			console.log(rendered);
+			$('ul').append(rendered);
+			
 
 		},
 	}
@@ -48,6 +45,11 @@ console.log('Ready');
 // 		var template = 'Title : {{title}} Author : {{author}}';
 // 		var output = Mustache.render(template, data);
 // 		console.log(output);	
+
+// var data = { books: [ "Javascript: the Good Parts", "Clean Code" ] };
+// var template = '{{#books}}<li>{{.}}</li>{{/books}}';
+// var output = Mustache.render(template, data);
+// $('#example').append(output);
 
 
 
