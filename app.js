@@ -19,15 +19,15 @@ console.log('Ready');
 		},
 		showInfos : function(response){
 			var template = "<ul>{{#customers}}<li>{{first_name}} {{last_name}} {{company}} {{role}} {{phone}} {{email}} {{description}}</li>{{/customers}}</ul>";
-			console.log(template);
+			//console.log(template);
 			var rendered = Mustache.render(template, response);
-			console.log(rendered);
+			//console.log(rendered);
 			$('ul').append(rendered);
 			
 
 		},
 	}
-	app.init();
+	//app.init();
 })();
 
 
