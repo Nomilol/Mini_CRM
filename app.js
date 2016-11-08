@@ -11,7 +11,7 @@ console.log('Ready');
 
 		},
 		recupInfos : function(){
-			var urlServer = 'http://192.168.1.124:1337/crm.json';
+			var urlServer = '/crm.json';
 			$.ajax(urlServer)
 			.done(app.showInfos);
 
@@ -20,10 +20,10 @@ console.log('Ready');
 		showInfos : function(response){
 			for(var i = 0; i < response.customers.length; i++ ){
 				var infosUsers = response.customers[i];
-				//console.log(infosUsers);
+				console.log(infosUsers);
 				$('ul').append('<li>' + infosUsers.first_name + infosUsers.last_name + '</li>')
 			}
-			var data = {infos : [infosUsers] };
+			var data = {infos : infosUsers };
 			var template = '{{#infos}}<li>{{infos}}</li>{{/infos}}';
 			var output = Mustache.render(template, data);
 			$('ul').append(output);		

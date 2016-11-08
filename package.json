@@ -9,7 +9,16 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
+    "jquery": "^3.1.1",
     "mustache": "^2.2.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nomilol/Mini_Crm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nomilol/Mini_Crm/issues"
+  },
+  "homepage": "https://github.com/Nomilol/Mini_Crm#readme",
   "description": ""
 }
